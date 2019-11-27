@@ -21,4 +21,9 @@ class ApplicationController < Sinatra::Base
     @recipe.delete
     redirect to '/recipes'
   end
+
+  get '/articles/:id/edit' do  #load edit form
+    @recipe = Recipe.find_by_id(params[:id])
+    erb :edit
+  end
 end
